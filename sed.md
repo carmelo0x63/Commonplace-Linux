@@ -1,6 +1,8 @@
 # `sed`: Stream EDitor
 The sed utility reads the specified files, or the standard input if no files are specified, modifying the input as specified by a list of commands.  The input is then written to the standard output.
 
+----
+
 ### Test file
 The file we'll be testing against is below.
 ```
@@ -49,3 +51,11 @@ bbb = 222
 abc = 333
 ...
 ```
+
+----
+
+### Useful links
+- [Sed Command in Linux/Unix with examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [50 sed Command Examples](https://linuxhint.com/50_sed_command_examples/)
+- [These 10 Sed Examples Will Make You a Linux Power User]https://www.makeuseof.com/sed-examples/)
+
