@@ -52,10 +52,19 @@ abc = 333
 ...
 ```
 
+### Delete line containing a string
+```
+$ sed "/abc.*/d" test.txt
+aaa = 111
+bbb = 222
+ccc = 333
+ddd = 444
+```
+
 ----
 
 ### Useful links
 - [Sed Command in Linux/Unix with examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
 - [50 sed Command Examples](https://linuxhint.com/50_sed_command_examples/)
-- [These 10 Sed Examples Will Make You a Linux Power User]https://www.makeuseof.com/sed-examples/)
+- [These 10 Sed Examples Will Make You a Linux Power User](https://www.makeuseof.com/sed-examples/)
 
