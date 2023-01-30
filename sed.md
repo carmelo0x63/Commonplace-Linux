@@ -63,8 +63,23 @@ ddd = 444
 
 ----
 
+### Capture groups
+```
+echo 'Hello baby!' | sed 's/\(Hello\) \(baby!\)/\1 world! Bye \2/'
+Hello world! Bye baby!
+```
+
+#### Explanation:
+1. the string `Hello baby!` is piped into `sed`
+2. `sed` searches (`s/???/.../`) both `Hello` and `baby!` strings (within the escaped parentheses `\(` and `\)`)
+3. the following internal variables are created `\1 = Hello` and `\2 = baby!`
+4. the final output is `\1 world! Bye \2` (determined by the second set of slashes, `s/.../???/`), corresponding to `Hello world! Bye baby!`
+
+----
+
 ### Useful links
 - [Sed Command in Linux/Unix with examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
 - [50 sed Command Examples](https://linuxhint.com/50_sed_command_examples/)
+- [sed examples of capture groups](https://linuxhint.com/sed-capture-group-examples/)
 - [These 10 Sed Examples Will Make You a Linux Power User](https://www.makeuseof.com/sed-examples/)
 

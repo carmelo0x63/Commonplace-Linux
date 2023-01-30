@@ -29,7 +29,7 @@ $ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out private-key.
 
 A new file will appear with the following contents:
 ```
- cat private-key.pem 
+$ cat private-key.pem 
 -----BEGIN PRIVATE KEY-----
 MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDB3Bj2yINMkC93
 ...
