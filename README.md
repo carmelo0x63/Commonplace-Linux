@@ -10,5 +10,6 @@ My (limited) knowledge of Linux compiled into one single location.
 - [netcat/nc](netcat.md)
 - [openssl](openssl.md)
 - [sed](sed.md)
+- [ssh-keygen](ssh_keygen.md)
 - [tcpdump](tcpdump.md)
 
