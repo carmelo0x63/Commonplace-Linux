@@ -22,7 +22,28 @@ Two files will be generated in the current directory, namely, <filename> and <fi
 -rw-r--r--  1 <user>  <group>   750B Feb 10 12:15 <filename>.pub
 ```
 
-### Verify a key
+### Verify private key/public key match
+Several methods exist, here's my suggestion: read both private (`-ye`) and public (`-e`) keys then compare the outputs. Bonus points if a common format is specified. For instance:
+- private key:
+```
+$ ssh-keygen -yef filename -m PEM
+-----BEGIN RSA PUBLIC KEY-----
+MIIB***
+...
+-----END RSA PUBLIC KEY-----
+```
+
+- public key:
+```
+$ ssh-keygen -ef filename.pub -m PEM 
+-----BEGIN RSA PUBLIC KEY-----
+MIIB***
+...
+-----END RSA PUBLIC KEY-----
+```
+**NOTE**: to make the task easier, the output can be piped into, say, good old `md5sum`.
+
+### Verify a remote host's key
 The typical scenario, one tries to ssh into a remote host and the following message pops up:
 ```
 The authenticity of host '<ip_address>' can't be established.
@@ -41,5 +62,5 @@ If the two fingerprints match, we rest assured the server we're trying to connec
 ----
 
 ### Useful links
-- []()
+- [How to verify host fingerprint in Openssh](https://superuser.com/questions/1246732/how-to-verify-host-fingerprint-in-openssh)
 
