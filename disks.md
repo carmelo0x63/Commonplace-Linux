@@ -12,11 +12,21 @@
 $ findmnt 
 TARGET                       SOURCE         FSTYPE          OPTIONS
 /                            /dev/sda2      ext4            rw,relatime
-
- ... truncated...
+├─/sys                       sysfs          sysfs           rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security     securityfs     securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup           cgroup2        cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore           pstore         pstore          rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf              none           bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/kernel/debug        debugfs        debugfs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing      tracefs        tracefs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/config       configfs       configfs        rw,nosuid,nodev,noexec,relatime
+│ └─/sys/fs/fuse/connections fusectl        fusectl         rw,nosuid,nodev,noexec,relatime
+├─/proc                      proc           proc            rw,relatime
+│ └─/proc/sys/fs/binfmt_misc systemd-1      autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16406
+... truncated...
 ```
 
-### `findmnt` usage with options
+### `findmnt`: usage with options
 #### `--real`: print only real filesystems
 ```
 $ findmnt --real
@@ -40,7 +50,7 @@ portal    fuse.portal                          /run/user/1000/doc
 ----
 
 <a href="#lsblk">
-### `lsblk` simple usage
+### `lsblk`: simple usage
 ```
 $ lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -49,7 +59,7 @@ sda      8:0    0 119.2G  0 disk
 └─sda2   8:2    0 111.2G  0 part /
 ```
 
-#### `lsblk` with `-f|--fs` option, to show info about filesystems
+#### `lsblk`: with `-f|--fs` option, to show info about filesystems
 ```
 NAME   FSTYPE FSVER LABEL UUID      FSAVAIL FSUSE% MOUNTPOINT
 sda
