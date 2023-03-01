@@ -9,7 +9,18 @@
 <a href="#findmnt">
 
 ### `findmnt`: simple usage
-
+```
+$ findmnt 
+TARGET                       SOURCE         FSTYPE          OPTIONS
+/                            /dev/sda2      ext4            rw,relatime
+├─/sys                       sysfs          sysfs           rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security     securityfs     securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup           cgroup2        cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
+... truncated...
+├─/proc                      proc           proc            rw,relatime
+│ └─/proc/sys/fs/binfmt_misc systemd-1      autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16406
+... truncated...
+```
 
 ### `findmnt`: usage with options
 #### `--real`: print only real filesystems
@@ -35,6 +46,7 @@ portal    fuse.portal                          /run/user/1000/doc
 ----
 
 <a href="#lsblk">
+
 ### `lsblk`: simple usage
 ```
 $ lsblk
