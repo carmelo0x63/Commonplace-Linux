@@ -12,17 +12,7 @@
 $ findmnt 
 TARGET                       SOURCE         FSTYPE          OPTIONS
 /                            /dev/sda2      ext4            rw,relatime
-├─/sys                       sysfs          sysfs           rw,nosuid,nodev,noexec,relatime
-│ ├─/sys/kernel/security     securityfs     securityfs      rw,nosuid,nodev,noexec,relatime
-│ ├─/sys/fs/cgroup           cgroup2        cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
-│ ├─/sys/fs/pstore           pstore         pstore          rw,nosuid,nodev,noexec,relatime
-│ ├─/sys/fs/bpf              none           bpf             rw,nosuid,nodev,noexec,relatime,mode=700
-│ ├─/sys/kernel/debug        debugfs        debugfs         rw,nosuid,nodev,noexec,relatime
-│ ├─/sys/kernel/tracing      tracefs        tracefs         rw,nosuid,nodev,noexec,relatime
-│ ├─/sys/kernel/config       configfs       configfs        rw,nosuid,nodev,noexec,relatime
-│ └─/sys/fs/fuse/connections fusectl        fusectl         rw,nosuid,nodev,noexec,relatime
-├─/proc                      proc           proc            rw,relatime
-│ └─/proc/sys/fs/binfmt_misc systemd-1      autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16406
+
  ... truncated...
 ```
 
