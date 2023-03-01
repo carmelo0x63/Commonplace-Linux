@@ -7,7 +7,7 @@
 ----
 
 <a href="#findmnt">
-### `findmnt`: simple usage
+#### `findmnt`: simple usage
 ```
 $ findmnt 
 TARGET                       SOURCE         FSTYPE          OPTIONS
