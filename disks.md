@@ -6,7 +6,7 @@
 
 ----
 
-<a href="#findmnt">
+<a href="#findmnt"></a>
 
 ### `findmnt`: simple usage
 ```
@@ -45,7 +45,7 @@ portal    fuse.portal                          /run/user/1000/doc
 
 ----
 
-<a href="#lsblk">
+<a href="#lsblk"></a>
 
 ### `lsblk`: simple usage
 ```
