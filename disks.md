@@ -56,6 +56,7 @@ sda      8:0    0 119.2G  0 disk
 └─sda2   8:2    0 111.2G  0 part /
 ```
 
+### `lsblk`: usage with options
 #### `lsblk`: with `-f|--fs` option, to show info about filesystems
 ```
 NAME   FSTYPE FSVER LABEL UUID      FSAVAIL FSUSE% MOUNTPOINT
