@@ -5,7 +5,7 @@
 
 ### Generate a new key
 ```
-$ ssh-keygen -t rsa -b 4096 -f <filename> -C "<comment>" -N "" -q
+$ ssh-keygen -t rsa -b 4096 -f "<filename>" -C "<comment>" -N "" -q
 ```
 
 **NOTE**:
@@ -23,7 +23,8 @@ Two files will be generated in the current directory, namely, <filename> and <fi
 ```
 
 ### Verify private key/public key match
-Several methods exist, here's my suggestion: read both private (`-ye`) and public (`-e`) keys then compare the outputs. Bonus points if a common format is specified. For instance:
+1. Method #1
+Read both private (`-ye`) and public (`-e`) keys then compare the outputs. Bonus points if a common format is specified. For instance:
 - private key:
 ```
 $ ssh-keygen -yef filename -m PEM
@@ -42,6 +43,14 @@ MIIB***
 -----END RSA PUBLIC KEY-----
 ```
 **NOTE**: to make the task easier, the output can be piped into, say, good old `md5sum`.
+
+2. Method #2
+Calculate the fingerprint of both the private and public keys. For instance:
+```
+$ ssh-keygen -lf <filename>
+<bit_size> <hash_algo>:*** <comment+key_type>
+```
+**NOTE**: comparing the two outputs is very easy.
 
 ### Verify a remote host's key
 The typical scenario, one tries to ssh into a remote host and the following message pops up:
@@ -63,4 +72,5 @@ If the two fingerprints match, we rest assured the server we're trying to connec
 
 ### Useful links
 - [How to verify host fingerprint in Openssh](https://superuser.com/questions/1246732/how-to-verify-host-fingerprint-in-openssh)
+- [Public key cryptography: RSA keys](https://www.thedigitalcatonline.com/blog/2018/04/25/rsa-keys/)
 

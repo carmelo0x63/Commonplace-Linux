@@ -1,7 +1,7 @@
 # This note groups a few commands focusing on disks and filesystems
-- `findmnt`: find a filesystem
+- `findmnt`: find a filesystem</br>
    `findmnt` will list all mounted filesystems or search for a filesystem.
-- `lsblk`: list block devices
+- `lsblk`: list block devices</br>
    `lsblk` lists information about all available or the specified block devices. The lsblk command reads the sysfs filesystem and udev db to gather information.
 
 ----
