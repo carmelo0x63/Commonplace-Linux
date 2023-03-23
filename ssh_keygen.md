@@ -22,6 +22,26 @@ Two files will be generated in the current directory, namely, <filename> and <fi
 -rw-r--r--  1 <user>  <group>   750B Feb 10 12:15 <filename>.pub
 ```
 
+----
+
+### Verify a remote host's key
+The typical scenario, one tries to ssh into a remote host and the following message pops up: 
+```
+The authenticity of host '<ip_address>' can't be established.
+ED25519 key fingerprint is SHA256:a1b***Zk9.
+```
+How can that `a1b***Zk9` fingerprint be validated?</br>
+Well, evidently, we need to get support from the remote host admin. What if we are that persons? What are we supposed to do?</br>
+`ssh-keygen` comes to the rescue in that we can invoke it with the `-l` ("show fingerprint of specified public key file") option. For instance:
+```
+$ ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub -E sha256
+256 SHA256:a1b***Zk9 <comment> (ED25519)
+```
+
+If the two fingerprints match, we rest assured the server we're trying to connect to is the right one.
+
+----
+
 ### Verify private key/public key match
 1. Method #1</br>
 Read both private (`-ye`) and public (`-e`) keys then compare the outputs. Bonus points if a common format is specified. For instance:
@@ -50,23 +70,7 @@ Calculate the fingerprint of both the private and public keys. For instance:
 $ ssh-keygen -lf <filename>
 <bit_size> <hash_algo>:*** <comment+key_type>
 ```
-**NOTE**: comparing the two outputs is very easy.
-
-### Verify a remote host's key
-The typical scenario, one tries to ssh into a remote host and the following message pops up:
-```
-The authenticity of host '<ip_address>' can't be established.
-ED25519 key fingerprint is SHA256:a1b***Zk9.
-```
-How can that `a1b***Zk9` fingerprint be validated?</br>
-Well, evidently, we need to get support from the remote host admin. What if we are that persons? What are we supposed to do?</br>
-`ssh-keygen` comes to the rescue in that we can invoke it with the `-l` ("show fingerprint of specified public key file") option. For instance:
-```
-$ ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub -E sha256
-256 SHA256:a1b***Zk9 <comment> (ED25519)
-```
-
-If the two fingerprints match, we rest assured the server we're trying to connect to is the right one.
+**NOTE**: by running the commands in sequence the outputs will be aligned, comparing them is immediate.
 
 ----
 
