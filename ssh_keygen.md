@@ -23,7 +23,7 @@ Two files will be generated in the current directory, namely, <filename> and <fi
 ```
 
 ### Verify private key/public key match
-1. Method #1
+1. Method #1</br>
 Read both private (`-ye`) and public (`-e`) keys then compare the outputs. Bonus points if a common format is specified. For instance:
 - private key:
 ```
@@ -44,7 +44,7 @@ MIIB***
 ```
 **NOTE**: to make the task easier, the output can be piped into, say, good old `md5sum`.
 
-2. Method #2
+2. Method #2</br>
 Calculate the fingerprint of both the private and public keys. For instance:
 ```
 $ ssh-keygen -lf <filename>
