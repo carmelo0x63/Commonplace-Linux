@@ -3,6 +3,10 @@
    `findmnt` will list all mounted filesystems or search for a filesystem.
 - `lsblk`: list block devices</br>
    `lsblk` lists information about all available or the specified block devices. The lsblk command reads the sysfs filesystem and udev db to gather information.
+- `fdisk`: manipulate disk partition table<br/>
+   `fdisk -l` lists the partition tables for the specified devices and then exits. If no devices are given, those mentioned in /proc/partitions (if that file exists) are used.
+- `parted`: a partition manipulation program<br/>
+   `parted -l` lists partition layout on all block devices
 
 ----
 
@@ -73,6 +77,44 @@ sda
 └─sda2 ext4   1.0           ********    73.4G    28% /
 sdb
 └─sdb1 exfat  1.0   extdsk  AAFA-54B1   50.4G    58% /media/user/extdsk
+```
+
+----
+
+<a href="#fdisk"></a>
+
+### `fdisk -l`
+```
+$ sudo fdisk -l
+Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+Disk model: SanDisk SD5SB212
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe80546f2
+
+Device     Boot    Start       End   Sectors   Size Id Type
+/dev/sda1           3906  16800781  16796876     8G 83 Linux
+/dev/sda2       16801792 250068991 233267200 111.2G 83 Linux
+```
+
+----
+
+<a href="#parted"></a>
+
+### `parted -l`
+```
+$ sudo parted -l
+Model: ATA SanDisk SD5SB212 (scsi)
+Disk /dev/sda: 128GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start   End     Size    Type     File system     Flags
+ 1      2000kB  8602MB  8600MB  primary  linux-swap(v1)
+ 2      8603MB  128GB   119GB   primary  ext4
 ```
 
 ----
