@@ -42,4 +42,5 @@ $ awk '{ print $3 ": " $1}' test.txt
 - [AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
 - [30 Examples for Awk Command in Text Processing](https://likegeeks.com/awk-command/)
 - [10 Awesome Awk Command Examples](https://linuxhint.com/awk-command-examples/)
+- [HANDY ONE-LINE SCRIPTS FOR AWK](https://www.pement.org/awk/awk1line.txt)
 
