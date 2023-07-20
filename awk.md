@@ -36,6 +36,34 @@ $ awk '{ print $3 ": " $1}' test.txt
 
 ----
 
+### Sum the Nth column of a CSV file
+file `EXPENSES_file.txt`:
+```
+Item 1, 2023/07/10, 10
+Item 2, 2023/07/12, 15
+Item 3, 2023/07/15, 25
+```
+
+Command:
+```
+$ awk -F"," \          
+    'BEGIN {print "\nItem, Date, Amount"; x = 0} \
+     {print; x += $3} \
+     END {print "Total: " x}' \
+    EXPENSES_file.txt
+```
+
+Output:
+```
+Item, Date, Amount
+Item 1, 2023/07/10, 10
+Item 2, 2023/07/12, 15
+Item 3, 2023/07/15, 25
+Total: 50
+```
+
+----
+
 ### Useful links
 - [The Linux AWK Command – Linux and Unix Usage Syntax Examples](https://www.freecodecamp.org/news/the-linux-awk-command-linux-and-unix-usage-syntax-examples/)
 - [AWK - Basic Examples](https://www.tutorialspoint.com/awk/awk_basic_examples.htm#)

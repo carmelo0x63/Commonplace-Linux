@@ -9,4 +9,5 @@ Tcpdump prints out a description of the contents of packets on a network interfa
 
 ### Useful links
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
+- [TCPDump Examples – 30 Best Commands Ever!](https://www.shellhacks.com/tcpdump-examples-30-best-commands-ever/)
 
