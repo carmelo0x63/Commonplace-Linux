@@ -10,6 +10,7 @@ My (limited) knowledge of Linux compiled into one single location.
   - [lsblk](disks.md#lsblk)
 - [netcat/nc](netcat.md)
 - [openssl](openssl.md)
+- [ps](ps.md)
 - [sed](sed.md)
 - [ssh-keygen](ssh_keygen.md)
 - [tcpdump](tcpdump.md)
