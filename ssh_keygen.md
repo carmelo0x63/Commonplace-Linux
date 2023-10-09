@@ -74,7 +74,16 @@ $ ssh-keygen -lf <filename>
 
 ----
 
+### SSH and host keys
+Host keys are cryptographic keys pairs used to authenticate computers. Typically stored under `/etc/ssh/`, the file names begin with `ssh_host_` and continue with `rsa`, `ecdsa`, and `ed25519` depending on the algorithm used during the generation.
+To re-generate these keys, e.g. a VM has been cloed and it's necessary to uniquely identify it, the following two steps are to be taken on a Debian system:
+1. remove the old keys, `# rm -f /etc/ssh/ssh_host_*`
+2. manually create new ones, `# dpkg-reconfigure openssh-server`
+
+----
+
 ### Useful links
 - [How to verify host fingerprint in Openssh](https://superuser.com/questions/1246732/how-to-verify-host-fingerprint-in-openssh)
 - [Public key cryptography: RSA keys](https://www.thedigitalcatonline.com/blog/2018/04/25/rsa-keys/)
+- [What are SSH Host Keys?](https://www.ssh.com/academy/ssh/host-key)
 
