@@ -12,6 +12,7 @@ My (limited) knowledge of Linux compiled into one single location.
 - [openssl](openssl.md)
 - [ps](ps.md)
 - [sed](sed.md)
+- [ssh + scp](ssh_scp.md)
 - [ssh-keygen](ssh_keygen.md)
 - [tcpdump](tcpdump.md)
 
