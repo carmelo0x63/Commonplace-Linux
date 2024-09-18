@@ -74,6 +74,13 @@ $ ssh-keygen -lf <filename>
 
 ----
 
+### Generate public key from private key
+```
+$ ssh-keygen -f ~/.ssh/private.pem -y > ~/.ssh/public.pem
+```
+
+----
+
 ### SSH and host keys
 Host keys are cryptographic keys pairs used to authenticate computers. Typically stored under `/etc/ssh/`, the file names begin with `ssh_host_` and continue with `rsa`, `ecdsa`, and `ed25519` depending on the algorithm used during the generation.
 To re-generate these keys, e.g. a VM has been cloed and it's necessary to uniquely identify it, the following two steps are to be taken on a Debian system:
