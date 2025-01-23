@@ -23,7 +23,7 @@ Both `apt` and `dpkg` are command line interfaces to Debian package management s
   remove        - Remove packages
 ```
 
-### dpkg's most used options
+### dpkg and dpkg-query: examples
 - `dpkg -l|--list [<pattern>...]`: list packages
 ```
 $ dpkg -l | grep wireshark
@@ -31,7 +31,7 @@ rc  libwireshark-data                          4.0.11-1~deb12u1                 
 rc  wireshark-common                           4.0.11-1~deb12u1                       amd64        network traffic analyzer - common files
 ```
 
-- `dpks -S|--search <pattern>...`: find package(s) owning file(s)
+- `dpkg -S|--search <pattern>...`: find package(s) owning file(s)
 ```
 $ dpkg -S nmap
 nmap-common: /usr/share/nmap/scripts/http-apache-server-status.nse
@@ -39,4 +39,10 @@ papirus-icon-theme: /usr/share/icons/Papirus/16x16/apps/org.nmap.Zenmap.svg
 nmap-common: /usr/share/nmap/scripts/http-auth.nse
 nmap-common: /usr/share/nmap/scripts/pop3-capabilities.nse
 ...
+```
+
+- `$ dpkg-query -W <pattern>`: show information on package(s)
+```
+$ dpkg-query -W tightvncserver
+tightvncserver	1.3.10-0ubuntu4
 ```

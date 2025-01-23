@@ -82,4 +82,5 @@ Hello world! Bye baby!
 - [50 sed Command Examples](https://linuxhint.com/50_sed_command_examples/)
 - [sed examples of capture groups](https://linuxhint.com/sed-capture-group-examples/)
 - [These 10 Sed Examples Will Make You a Linux Power User](https://www.makeuseof.com/sed-examples/)
+- [How to Use sed Command to Delete a Line](https://phoenixnap.com/kb/sed-delete-line)
 
