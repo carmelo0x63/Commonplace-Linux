@@ -5,7 +5,7 @@
 
 ----
 
-The command has many options that can be explored. The links below can be helpful in breaking the ice. Additionally, the packt capture can be saved in a file and analyzed with [Wireshark](https://www.wireshark.org/).
+The command has many options that can be explored. The links below can be helpful in breaking the ice. Additionally, the packet capture can be saved in a file and analyzed with [Wireshark](https://www.wireshark.org/).
 
 <img src="./images/tcpdump2.png">
 
