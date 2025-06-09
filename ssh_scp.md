@@ -1,4 +1,4 @@
-### General commans
+### General commands
 
 #### Connect to <host> over SSH on custom port 2222 (default port is 22)
 `ssh -p 2222 <user1>@<host1>`
